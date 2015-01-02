@@ -1,6 +1,6 @@
 #Blog-Posts-API Rails Application
 
-App for creating, modifying, and deleting blog posts. Returns formatted responses in both HTML and JSON.
+App for creating, updating, and deleting blog posts. Returns formatted responses in both HTML and JSON.
 
 To test drive the application:
 
