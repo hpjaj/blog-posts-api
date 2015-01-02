@@ -1,0 +1,12 @@
+<h2><%= @category.title %></h2>
+
+<%= link_to "Edit Category", edit_category_path %>
+<p><%= link_to "Delete Category", @category, method: :delete, data: { confirm: "Delete this category?" } %></p>
+
+<p><%= link_to "New Post", new_category_post_path(@category) %></p>
+
+<% @posts.each do |post| %>
+  <p><%= link_to post.title, category_post_path(@category.id, post.id) %></p>
+  <p><%= post.body %></p>
+<% end %>
+

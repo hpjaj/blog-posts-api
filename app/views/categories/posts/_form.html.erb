@@ -1,0 +1,5 @@
+<%= form_for [@category, @post] do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :body %>
+  <%= f.submit "Save" %>
+<% end %>

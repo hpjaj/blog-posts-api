@@ -1,28 +1,17 @@
-== README
+#Blog-Posts-API Rails Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App for creating, modifying, and deleting blog posts. Returns formatted responses in both HTML and JSON.
 
-Things you may want to cover:
+To test drive the application:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Git clone the repository
+Run $ bundle
+- Migrate and seed the SQLite3 databases (rake db:migrate and rake db:seed)
+- Start the server, $ rails s, and browse to localhost:3000
+- Create, edit and delete a blog post
+- To visualize the JSON data, add .json to the end of the URL. For example:
+- Or use a tool like the Postman - REST Client Chrome extension to visualize the JSON data
+  - Create a custom accept header preset
+    - Click Manage Presets and create a header preset called JSON Accept
+    - Set the key to Accept
+    - Set its value toapplication/json`

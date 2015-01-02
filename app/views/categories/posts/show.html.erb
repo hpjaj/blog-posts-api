@@ -1,0 +1,7 @@
+<%= link_to "All #{@category.title} Posts", category_path(@category) %>
+
+<p><%= @post.title %></p>
+<p><%= @post.body %></p>
+
+<p><%= link_to "Edit Post", edit_category_post_path(@category, @post) %></p>
+<p><%= link_to "Delete Post", [@category, @post], method: :delete, data: { confirm: "Delete this post?" } %></p>
