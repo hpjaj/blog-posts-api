@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
         format.json { render json: 'Bad credentials', status: :unauthorized }
         format.html { flash[:error] = "Bad credentials" }
       end
+
     end
 
     attr_reader :current_user
