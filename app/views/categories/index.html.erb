@@ -1,7 +1,5 @@
-<%= link_to "New Category", new_category_path %>
-
-<h1>Categories</h1>
+<h2 class="headings">Categories</h2>
 
 <% @categories.each do |category| %>
-  <p><%= link_to category.title, category %></p>
+  <p class="capitalize"><%= link_to category.title, category %></p>
 <% end %>
