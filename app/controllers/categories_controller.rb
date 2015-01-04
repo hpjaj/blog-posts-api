@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
 
   before_action :authenticate, except: [:index, :show]
 
-  respond_to :html, :json
+  respond_to :json
 
   def index
     @categories = Category.all
@@ -15,18 +15,9 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      respond_to do |format|
-        format.json { render json: @category.to_json, status: :created }
-        format.html { redirect_to categories_path }
-      end
+      render json: @category.to_json, status: :created 
     else
-      respond_to do |format|
-        format.json { render json: @category.errors.full_messages, status: :unprocessable_entity }
-        format.html do
-          flash[:error] = @category.errors.full_messages
-          render :new
-        end
-      end
+      render json: @category.errors.full_messages, status: :unprocessable_entity 
     end
   end
 
@@ -42,31 +33,16 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update_attributes(category_params)
-      respond_to do |format|
-        format.json { render json: @category.to_json, status: :no_content }
-        format.html { redirect_to categories_path }
-      end
+      render json: @category.to_json, status: :no_content 
     else
-      respond_to do |format|
-        format.json { render json: @category.errors.full_messages, status: :unprocessable_entity }
-        format.html do
-          flash[:error] = @category.errors.full_messages
-          render :edit
-        end
-      end
+      render json: @category.errors.full_messages, status: :unprocessable_entity 
     end
   end
 
   def destroy
     @category = Category.find(params[:id])
-    if @category.destroy
-      respond_to do |format|
-        format.json { head :no_content }
-        format.html { redirect_to root_path }
-      end
-    else
-      render :show
-    end
+    @category.destroy
+    head :no_content
   end
 
   private

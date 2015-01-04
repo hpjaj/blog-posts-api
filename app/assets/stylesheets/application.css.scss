@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.home-nav {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.headings {
+  text-align: center;
+  padding-bottom: 15px;
+}

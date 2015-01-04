@@ -37,4 +37,13 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
 gem 'faker'
+gem 'bootstrap-sass', '~> 3.3.1'
+
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'shoulda-matchers', require: false
+end

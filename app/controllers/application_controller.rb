@@ -17,12 +17,7 @@ class ApplicationController < ActionController::Base
 
     def render_unauthorized
       self.headers['WWW-Authenticate'] = 'Token realm = "Posts"'
-
-      respond_to do |format|
-        format.json { render json: 'Bad credentials', status: :unauthorized }
-        format.html { flash[:error] = "Bad credentials" }
-      end
-
+      render json: 'Bad credentials', status: :unauthorized 
     end
 
     attr_reader :current_user

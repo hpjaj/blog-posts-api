@@ -1,7 +1,4 @@
-<%= link_to "All #{@category.title} Posts", category_path(@category) %>
+<span class="pull-right"><%= link_to "All #{@category.title.capitalize} Blog Posts", category_path(@category) %></span>
 
-<p><%= @post.title %></p>
+<h3><%= @post.title %></h3>
 <p><%= @post.body %></p>
-
-<p><%= link_to "Edit Post", edit_category_post_path(@category, @post) %></p>
-<p><%= link_to "Delete Post", [@category, @post], method: :delete, data: { confirm: "Delete this post?" } %></p>
